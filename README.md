@@ -8,7 +8,7 @@ It returns an embed with:
 - SKU/PID
 - Retail Price
 - Colorway
-- Release Date (year-mm-dd)
+- Release Date (yyyy-mm-dd)
 - Lowest Used Price
 
 My version uses discordpy so generate your own bot token and replace 'YOUR TOKEN HERE'.
