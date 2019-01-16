@@ -36,3 +36,5 @@ async def goat(ctx, *args):
     embed.add_field(name='Release Date:', value=date, inline=True)
     embed.add_field(name='Lowest Used Price:', value=lowest_used, inline=True)
     await client.say(embed=embed)
+
+client.run(token)
