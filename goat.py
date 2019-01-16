@@ -3,6 +3,9 @@ from discord.ext import commands
 import requests
 import json
 
+token = 'YOUR TOKEN HERE'
+client = commands.Bot(command_prefix = '.')
+
 @client.command(pass_context=True)
 async def goat(ctx, *args):
     keywords = ''
