@@ -5,6 +5,7 @@ Unfortunately, it doesn't give a lot of information.
 
 It returns an embed with:
 - Product name/link
+- Thumbnail Picture
 - SKU/PID
 - Retail Price
 - Colorway
