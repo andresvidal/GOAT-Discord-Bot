@@ -1,4 +1,4 @@
-# GOAT-Unauthorized-API
+# GOAT-Discord-Bot
 
 API that GOAT uses to show automatic search results.
 Unfortunately, it doesn't give a lot of information.
