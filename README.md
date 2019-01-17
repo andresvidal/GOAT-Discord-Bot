@@ -1,6 +1,6 @@
 # GOAT-Discord-Bot
 
-API that GOAT uses to show automatic search results.
+Uses an unoffical API that GOAT uses to show automatic search results.
 Unfortunately, it doesn't give a lot of information.
 
 It returns an embed with:
