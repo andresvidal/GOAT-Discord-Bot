@@ -1,18 +1,16 @@
 # GOAT-Discord-Bot
 
-Uses an unoffical API that GOAT uses to show automatic search results.
-Unfortunately, it doesn't give a lot of information.
+Uses GOAT's algolia search API to search products then uses that information in their own API to return sneaker data.
 
 It returns an embed with:
 - Product name/link
 - Thumbnail Picture
 - SKU/PID
-- Retail Price
-- Colorway
 - Release Date (yyyy-mm-dd)
-- Lowest Used Price
+- Retail Price
+- Lowest Prices
+- 6 Recent Sales (Size not included)
 
-My version uses discordpy so generate your own bot token and replace 'YOUR TOKEN HERE'.
+This uses discordpy so generate your own discord bot token and replace 'YOUR TOKEN HERE' in goat.py
 
-![image](https://user-images.githubusercontent.com/30479452/51228237-a7ba4e80-1925-11e9-8c4d-5048d3e2773a.png)
-![image](https://user-images.githubusercontent.com/30479452/51228293-e4864580-1925-11e9-8f7d-69892baad554.png)
+![image](https://user-images.githubusercontent.com/30479452/52577864-05409e80-2df1-11e9-80e9-7897f6b8551b.png)
