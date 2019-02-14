@@ -28,29 +28,35 @@ async def goat(ctx, *args):
                 'accept-language': 'en-us',
                 'accept-encoding': 'br,gzip,deflate'
             }
-            r2 = s2.get(priceurl, headers=header)
-            prices = r2.json()
-            priceformat = ''
-            for size in prices['availableSizesNew']:
-                priceformat += f"Size {size[0]} ${str(int(size[1]))[:-2]}\n"
-            r3 = s2.get(recenturl, headers=header)
-            recent = r3.json()
-            recentformat = ''
-            for size in recent:
-                recentformat += f"${str(int(size['priceCents']))[:-2]} at {size['purchasedAt'].split('T')[0]} {size['purchasedAt'].split('T')[1].split('.')[0]} GMT\n"
-            r4 = s2.get(bidurl, headers=header)
-            bids = r4.json()
-            bidformat = ''
-            
     except:
         await client.say('An error occurred. Please check keywords again.')
+
+    r2 = s2.get(priceurl, headers=header)
+    prices = r2.json()
+    priceformat = ''
+    r4 = s2.get(bidurl, headers=header)
+    bids = r4.json()
+    print(bids.keys())
+    for ask in prices['availableSizesNewV2']:
+        if ask[0] in bids.keys():
+            priceformat += f"Size {ask[0]} | Ask: ${ask[1][:-2]} | Bid: ${bids[ask[0]][:-2]}\n"
+
+    r3 = s2.get(recenturl, headers=header)
+    recent = r3.json()
+    recentformat = ''
+    for size in recent:
+        recentformat += f"${str(int(size['priceCents']))[:-2]} at {size['purchasedAt'].split('T')[0]} {size['purchasedAt'].split('T')[1].split('.')[0]} GMT\n"
+
     embed = discord.Embed(title='GOAT App Checker', color=0x13e79e)
     embed.set_thumbnail(url=prices['pictureUrl'])
     embed.set_footer(text='@kxvxnc#6989')
     embed.add_field(name=prices['name'], value=f"https://goat.com/sneakers/{results['slug']}", inline=False)
-    embed.add_field(name='SKU | Release Date | Retail', value=f"{results['sku']} | {results['release_date'].split('T')[0]} | ${str(results['special_display_price_cents'])[:-2]}", inline=False)
-    embed.add_field(name='Prices:', value=priceformat, inline=True)
-    embed.add_field(name='Recent Sales:', value=recentformat, inline=True)
+    try:
+        embed.add_field(name='SKU | Release Date | Retail', value=f"{results['sku']} | {results['release_date'].split('T')[0]} | ${str(results['special_display_price_cents'])[:-2]}", inline=False)
+    except:
+        embed.add_field(name='SKU | Release Date | Retail', value=f"{results['sku']} | {results['release_date']} | ${str(results['special_display_price_cents'])[:-2]}", inline=False)
+    embed.add_field(name='Prices:', value=priceformat, inline=False)
+    embed.add_field(name='Recent Sales:', value=recentformat, inline=False)
     await client.say(embed=embed)
 
 client.run(token)
