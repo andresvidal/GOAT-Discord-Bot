@@ -8,13 +8,10 @@ It returns an embed with:
 - SKU/PID
 - Release Date (yyyy-mm-dd)
 - Retail Price
-- Lowest Prices
-- 6 Recent Sales (Size not included)
+- Size | Lowest Ask | Highest Bid
+- 6 Recent Sales with yyyy-mm-dd and GMT (Sizes not included)
 
 This uses discordpy so generate your own discord bot token and replace 'YOUR TOKEN HERE' in goat.py
 Feel free to edit the command prefix too.
 
-# In Progress
-- Highest Bids for each size
-
-![image](https://user-images.githubusercontent.com/30479452/52577864-05409e80-2df1-11e9-80e9-7897f6b8551b.png)
+![image](https://user-images.githubusercontent.com/30479452/52813458-d08a4c80-3067-11e9-8aa2-993d37a4d322.png)
