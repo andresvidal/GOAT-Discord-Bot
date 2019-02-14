@@ -36,7 +36,6 @@ async def goat(ctx, *args):
     priceformat = ''
     r4 = s2.get(bidurl, headers=header)
     bids = r4.json()
-    print(bids.keys())
     for ask in prices['availableSizesNewV2']:
         if ask[0] in bids.keys():
             priceformat += f"Size {ask[0]} | Ask: ${ask[1][:-2]} | Bid: ${bids[ask[0]][:-2]}\n"
